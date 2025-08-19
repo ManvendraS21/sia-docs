@@ -1,0 +1,49 @@
+# mkdocs.yml
+
+site_name: Sia AI Documentation
+edit_uri: ""
+site_url: ""
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light vs dark mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  
+  # --- MODIFIED FEATURES SECTION ---
+  features:
+    # - navigation.tabs # <-- REMOVED this line to disable top tabs
+    - navigation.expand # <-- ADDED this line to show all sections in the left sidebar
+    - navigation.sections
+    - navigation.top
+    - toc.integrate # This integrates the page's table of contents into the left nav
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# We are using the original nested navigation structure.
+# This structure is ideal for creating organized sections in the left sidebar.
+nav:
+  - 'Overview': 'index.md'
+  - 'User Guide':
+    - 'The Chat Interface': 'home.md'
+    - 'The Modeling Page': 'modeling.md'
+    - 'The Knowledge Base': 'knowledge.md'
+  - 'Best Practices':
+    - 'Effective Prompting & Analysis': 'prompting.md'
+    - 'Creating Dashboards': 'dashboards.md'
+  - 'Administration':
+    - 'Configuring Language Models': 'config.md'
